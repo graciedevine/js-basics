@@ -18,8 +18,11 @@ function playRound(playerSelection, computerSelection) {
         console.log('Yay! Rock beats scissors!')
     } else if (playerMove === 'scissors' && computerMove === 'paper') {
         console.log('Yay! Scissors cut paper!')
-    } else if (playerMove === 'paper' && computerMove === 'scissors')
+    } else if (playerMove === 'paper' && computerMove === 'scissors') {
         console.log('Sorry, scissors cut paper.')
+    } else if (playerMove === computerMove) {
+        console.log("It's a tie!")
 
-    return playerSelection, computerSelection
+        return playerSelection, computerSelection
+    }
 }
