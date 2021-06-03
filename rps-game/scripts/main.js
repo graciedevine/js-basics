@@ -26,3 +26,21 @@ function playRound(playerSelection, computerSelection) {
         return playerSelection, computerSelection
     }
 }
+
+// function game() {
+//     let fiveRounds = playRound();
+
+//     for (let i = 0; i < 5; i++) {
+//         game(i);
+//     }
+// }
+
+// Problem:
+// when game() is called
+//   store result playRound() within fiveRounds
+//   start a loop with a length of 6 times
+//     call game
+//       store result playRound() within fiveRounds
+//       start a loop with a length of 6 times
+//         call game
+// ...etc, this will continue
