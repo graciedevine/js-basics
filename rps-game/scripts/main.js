@@ -1,13 +1,12 @@
-const moves = ['rock', 'paper', 'scissors'];
-
 function computerPlay() {
+	const moves = ['rock', 'paper', 'scissors'];
 	const computerMove = moves[Math.floor(Math.random() * moves.length)];
 	return computerMove;
 }
 
 function playRound() {
 	const playerChoice = prompt('Choose your weapon', 'rock, paper, scissors').toLowerCase()
-	if (!moves.includes(playerChoice)) {
+	if (playerChoice !== 'rock' && playerChoice !== 'paper' && playerChoice !== 'scissors') {
 		alert('Invalid move.');
 		return;
 	}
@@ -36,6 +35,6 @@ function playRound() {
 
 function game() {
 	for (let round = 0; round < 5; round++) {
-		console.log(playRound());
+		playRound();
 	}
 }
