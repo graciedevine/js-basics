@@ -2,24 +2,41 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Rock, Paper, Scissors</title>
+	<title>Rock, Paper, Scissors</title>
 
 </head>
 
 <body>
+	<header class="title">
+		<h1>Choose your weapon:</h1>
+	</header>
 
-  <h1>Choose your weapon:</h1>
+	<div id="container">
+		<button id="rock">Rock</button>
+		<button id="paper">Paper</button>
+		<button id="scissors">Scissors</button>
+	</div>
 
-  <div id="container">
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-  </div>
+	<div class="player-section">
+		<div id="container">
+			<p id="player-selection">Player chose: </p>
+		</div>
 
-  <script src="scripts/main.js"></script>
+		<div class="computer-section">
+			<div id="container">
+				<p id="computer-selection">Computer chose: </p>
+			</div>
+
+			<div class="scoreboard">
+				<div id="container">
+					<p id="results"></p>
+				</div>
+			</div>
+		</div>
+		<script src="scripts/main.js"></script>
 
 </body>
 
