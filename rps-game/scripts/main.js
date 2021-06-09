@@ -47,3 +47,16 @@ function playRound(playerChoice, computerChoice) {
 // 		playRound();
 // 	}
 // }
+
+const container = document.querySelector('#container');
+
+const playerSection = document.createElement('p');
+playerSection.classList.add('playerSection');
+playerSection.textContent = 'Player chose: ' + playerChoice;
+
+const computerSection = document.createElement('p');
+computerSection.classList.add('computerSection');
+computerSection.textContent = 'Computer chose: ' + computerChoice;
+
+container.appendChild(playerSection);
+container.appendChild(computerSection);
