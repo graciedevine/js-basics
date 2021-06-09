@@ -20,7 +20,7 @@ function playRound(playerChoice, computerChoice) {
 		alert('Invalid move.');
 		return;
 	}
-
+	// let outcome = ''
 	if (playerChoice === computerChoice) {
 		console.log("It's a tie!");
 	} else if (playerChoice === 'rock' && computerChoice === 'paper') {
@@ -36,6 +36,25 @@ function playRound(playerChoice, computerChoice) {
 	} else if (playerChoice === 'paper' && computerChoice === 'scissors') {
 		console.log('Sorry, scissors cuts paper.');
 	}
+
+	const container = document.querySelector('#container');
+
+	const playerSection = document.createElement('p');
+	playerSection.classList.add('playerSection');
+	playerSection.textContent = 'Player chose: ' + playerChoice;
+
+	const computerSection = document.createElement('p');
+	computerSection.classList.add('computerSection');
+	computerSection.textContent = 'Computer chose: ' + computerChoice;
+
+	const results = document.createElement('p');
+	results.classList.add('results');
+	results.textContent = 'Results: ';
+
+	container.appendChild(playerSection);
+	container.appendChild(computerSection);
+	container.appendChild(results);
+
 	return {
 		playerChoice,
 		computerChoice
@@ -48,15 +67,3 @@ function playRound(playerChoice, computerChoice) {
 // 	}
 // }
 
-const container = document.querySelector('#container');
-
-const playerSection = document.createElement('p');
-playerSection.classList.add('playerSection');
-playerSection.textContent = 'Player chose: ' + playerChoice;
-
-const computerSection = document.createElement('p');
-computerSection.classList.add('computerSection');
-computerSection.textContent = 'Computer chose: ' + computerChoice;
-
-container.appendChild(playerSection);
-container.appendChild(computerSection);
