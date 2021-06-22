@@ -13,47 +13,47 @@ function getComputerMove() {
 }
 
 function playRound(playerChoice, computerChoice) {
-	console.log('Player chose: ' + playerChoice)
-	console.log('Computer chose: ' + computerChoice)
 
 	if (playerChoice !== 'rock' && playerChoice !== 'paper' && playerChoice !== 'scissors') {
 		alert('Invalid move.');
 		return;
 	}
-	// let outcome = ''
+	let outcome = ''
 	if (playerChoice === computerChoice) {
-		console.log("It's a tie!");
+		outcome = "It's a tie!";
 	} else if (playerChoice === 'rock' && computerChoice === 'paper') {
-		console.log('Sorry, paper covers rock.');
+		outcome = 'Sorry, paper covers rock.';
 	} else if (playerChoice === 'paper' && computerChoice === 'rock') {
-		console.log('Yay! Paper covers rock!');
+		outcome = 'Yay! Paper covers rock!';
 	} else if (playerChoice === 'scissors' && computerChoice === 'rock') {
-		console.log('Sorry, rock beats scissors.');
+		outcome = 'Sorry, rock beats scissors.';
 	} else if (playerChoice === 'rock' && computerChoice === 'scissors') {
-		console.log('Yay! Rock beats scissors!');
+		outcome = 'Yay! Rock beats scissors!';
 	} else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-		console.log('Yay! Scissors cuts paper!');
+		outcome = 'Yay! Scissors cuts paper!';
 	} else if (playerChoice === 'paper' && computerChoice === 'scissors') {
-		console.log('Sorry, scissors cuts paper.');
+		outcome = 'Sorry, scissors cuts paper.';
 	}
 
 	const container = document.querySelector('#container');
+	const gameResults = document.querySelector('#game-results');
 
 	const playerSection = document.createElement('p');
 	playerSection.classList.add('playerSection');
-	playerSection.textContent = 'Player chose: ' + playerChoice;
+	playerSection.textContent = 'You chose: ' + playerChoice;
 
 	const computerSection = document.createElement('p');
 	computerSection.classList.add('computerSection');
-	computerSection.textContent = 'Computer chose: ' + computerChoice;
+	computerSection.textContent = 'The computer chose: ' + computerChoice;
 
 	const results = document.createElement('p');
 	results.classList.add('results');
-	results.textContent = 'Results: ';
+	results.textContent = outcome;
 
-	container.appendChild(playerSection);
-	container.appendChild(computerSection);
-	container.appendChild(results);
+	gameResults.innerHTML = ''
+	gameResults.appendChild(playerSection);
+	gameResults.appendChild(computerSection);
+	gameResults.appendChild(results);
 
 	return {
 		playerChoice,
